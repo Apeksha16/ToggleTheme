@@ -55,11 +55,26 @@ const App = () => {
     },
    
   ];
+  const sidebarData = {
+    title: "InnovateTech",
+    subtitle: "Solutions Dashboard",
+    status: "Online",
+    menuItems: [
+      { icon: "🏠", label: "Dashboard", active: true, badge: null },
+      { icon: "🚀", label: "Projects", active: false, badge: "5" },
+      { icon: "👥", label: "Team", active: false, badge: null },
+      { icon: "📊", label: "Analytics", active: false, badge: "New" },
+      { icon: "💬", label: "Messages", active: false, badge: "12" },
+      { icon: "⚙️", label: "Settings", active: false, badge: null },
+      { icon: "❓", label: "Help & Support", active: false, badge: null },
+    ],
+  };
+
   return (
     <ThemeProvider>
       <Header />
       <div className="middle-container">
-        <Sidebar />
+        <Sidebar data={sidebarData} />
         <div className="container-boxes">
           {data.map((item) => (
             <HomePageDiv1 data={item} key={item.id} />

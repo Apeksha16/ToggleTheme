@@ -1,45 +1,30 @@
 import { ThemeContext } from "../utils/ThemeContext";
 import { useContext } from "react";
 
-const Footer = () =>{
-      const {theme} = useContext(ThemeContext);
-    
-        const footerLight = {
-    backgroundColor: "rgb(243, 231, 216)",
-    padding: "16px 20px",
-    display: "flex",
-    justifyContent: "space-between",
-    gap: "12px",
-    color: "black",
-  };
-  const footerDark = {
-    padding: "16px 20px",
-    display: "flex",
-    justifyContent: "space-between",
-    gap: "12px",
-    backgroundColor: "#33334d",
-    color: "white",
-  };
+const Footer = () => {
+  const { theme } = useContext(ThemeContext);
 
-  const h1Light = {
-    margin: "0",
-    padding: "0",
-    color: "black",
-  };
-  const h1Dark = {
-    margin: "0",
-    padding: "0",
-    color: "white",
-  };
-
-    return(
-    <div style={theme == "light" ? footerLight : footerDark}>
-        <h1 style={theme == "light" ? h1Light : h1Dark}>Welcome to Toggle Theme Footer</h1>
-        {/* <label className="switch">
-      <input type="checkbox" />
-      <span className="slider"></span>
-    </label> */}
-</div> 
-    )
+  return (
+    <footer className={`footer ${theme === "dark" ? "footerDark" : ""}`}>
+      <div className="footer-content">
+        <div className="footer-section">
+          <h3 className="footer-title">InnovateTech Solutions</h3>
+          <p className="footer-text">
+            Transforming ideas into digital reality since 2023
+          </p>
+        </div>
+        <div className="footer-section">
+          <p className="footer-links">
+            <span>Privacy Policy</span> • 
+            <span> Terms of Service</span> • 
+            <span> Contact Us</span>
+          </p>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>© 2024 InnovateTech Solutions. All rights reserved.</p>
+      </div>
+    </footer>
+  );
 };
 export default Footer;
